@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script>
+        function sum()
+        {
+            let inputControl1=document.getElementById("fnTbx");
+            let inputControl2=document.getElementById("snTbx");
+            let resultLabel=document.getElementById("resultLbl");
+            //Access the value of input control
+            let v1=inputControl1.value;
+            let v2=inputControl2.value;
+            //Check condition value found or not
+            if(v1=="")
+            {
+                alert("Please enter First number");
+                return;
+            }   
+            if(v2=="")
+            {
+                alert("Please enter second number");
+                return;
+            }
+            //Convert string to number (float)
+            let n1=parseFloat(v1);
+            let n2=parseFloat(v2);
+             //Sum of n1 and n2 and put value in n3
+            let n3=n1+n2;
+            //Put result on label
+            resultLabel.innerHTML=n3;
+        }
+        function subtract()
+        {
+            let inputControl1=document.getElementById("fnTbx");
+            let inputControl2=document.getElementById("snTbx");
+            let resultLabel=document.getElementById("resultLbl");
+            //Access the value of input control
+            let v1=inputControl1.value;
+            let v2=inputControl2.value;
+            //Check condition value found or not
+            if(v1=="")
+            {
+                alert("Please enter First number");
+                return;
+            }   
+            if(v2=="")
+            {
+                alert("Please enter second number");
+                return;
+            }
+            //Convert string to number (float)
+            let n1=parseFloat(v1);
+            let n2=parseFloat(v2);
+             //Sum of n1 and n2 and put value in n3
+            let n3=n1-n2;
+            //Put result on label
+            resultLabel.innerHTML=n3;
+        }
+        function multiple()
+        {
+            let inputControl1=document.getElementById("fnTbx");
+            let inputControl2=document.getElementById("snTbx");
+            let resultLabel=document.getElementById("resultLbl");
+            //Access the value of input control
+            let v1=inputControl1.value;
+            let v2=inputControl2.value;
+            //Check condition value found or not
+            if(v1=="")
+            {
+                alert("Please enter First number");
+                return;
+            }   
+            if(v2=="")
+            {
+                alert("Please enter second number");
+                return;
+            }
+            //Convert string to number (float)
+            let n1=parseFloat(v1);
+            let n2=parseFloat(v2);
+             //Sum of n1 and n2 and put value in n3
+            let n3=n1*n2;
+            //Put result on label
+            resultLabel.innerHTML=n3;
+        }
+        function divide()
+        {
+            let inputControl1=document.getElementById("fnTbx");
+            let inputControl2=document.getElementById("snTbx");
+            let resultLabel=document.getElementById("resultLbl");
+            //Access the value of input control
+            let v1=inputControl1.value;
+            let v2=inputControl2.value;
+            //Check condition value found or not
+            if(v1=="")
+            {
+                alert("Please enter First number");
+                return;
+            }   
+            if(v2=="")
+            {
+                alert("Please enter second number");
+                return;
+            }
+            if(v2==0)
+            {
+                resultLabel.innerHTML="Undefined";
+                return;
+            }
+            //Convert string to number (float)
+            let n1=parseFloat(v1);
+            let n2=parseFloat(v2);
+             //Sum of n1 and n2 and put value in n3
+            let n3=n1/n2;
+            //Put result on label
+            resultLabel.innerHTML=n3;
+        }
+        function reset()
+        {
+            let inputControl1=document.getElementById("fnTbx");
+            let inputControl2=document.getElementById("snTbx");
+            let resultLabel=document.getElementById("resultLbl");
+
+
+            //blank all column
+            inputControl1.value="";
+            inputControl2.value="";
+            resultLabel.innerHTML="";
+            document.getElementById("optrLbl").innerHTML="";
+        }
+        function calculate(operation)
+        {
+            let inputControl1=document.getElementById("fnTbx");
+            let inputControl2=document.getElementById("snTbx");
+            let resultLabel=document.getElementById("resultLbl");
+            let optrLbl=document.getElementById("optrLbl");
+            //Access the value of input control
+            let v1=inputControl1.value;
+            let v2=inputControl2.value;
+            //Check condition value found or not
+            if(v1=="")
+            {
+                alert("Please enter First number");
+                return;
+            }   
+            if(v2=="")
+            {
+                alert("Please enter second number");
+                return;
+            }
+            //Convert string to number (float)
+            let n1=parseFloat(v1);
+            let n2=parseFloat(v2);
+            switch(operation)
+            {
+                case "+": result=n1+n2; break;
+                case "-": result=n1-n2; break;
+                case "*": result=n1*n2; break;
+                case "/": if(n2!=0) result=n1/n2; else result="undefined";
+            }
+            resultLabel.innerHTML=result;
+            optrLbl.innerHTML=operation;
+        }
+    </script>
+    <style>
+        .border1
+        {
+            border: solid 10px green;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8, border1">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 style="text-align: center;">Expession</h1><hr/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"><label>First Number</label></div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-3"><label>Second Number</label></div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"><label>Result</label></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"><input type="number" class="form-control" id="fnTbx"/></div>
+                    <div class="col-sm-2"><label id="optrLbl" style="font-size: 22px;"></label></div>
+                    <div class="col-sm-3"><input type="number" class="form-control" id="snTbx"/></div>
+                    <div class="col-sm-1"><label style="font-size: 22px;">=</label></div>
+                    <div class="col-sm-2"><label id="resultLbl"></label></div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-4"><button class="btn btn-primary" onclick="calculate('+');">Sum</button></div>
+                    <div class="col-sm-4"><button class="btn btn-primary" onclick="calculate('-');">Subtract</button></div>
+                    <div class="col-sm-4"><button class="btn btn-primary" onclick="calculate('*')">Multiple</button></div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-4"><button class="btn btn-primary" onclick="calculate('/');">Divide</button></div>
+                    <div class="col-sm-4"><button class="btn btn-primary" onclick="reset()">Reset</button></div>
+                    <div class="col-sm-4"></div>
+                </div>       
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</body>
+</html>
